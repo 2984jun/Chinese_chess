@@ -11,8 +11,8 @@ public class Chess {
         new ChessMainFrame("中国象棋；观棋不语真君子，棋死无悔大丈夫");
     }
 }
-/*ActionListener,MouseListener,*/
-class ChessMainFrame extends JFrame implements Runnable{
+ActionListener,MouseListener,
+class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runnable{
     //棋子
     JLabel play[]=new JLabel[32];
     //棋盘
