@@ -15,7 +15,7 @@ public class drewChessMan extends JFrame{
         for(i=0,k=24;i<2;i++,k+=456){
             play[i]=new JLabel(in);
             play[i].setBounds(k,56,55,55);
-            play[i].setName("黑车");
+            play[i].setName("车1");
         }
 
         //马
@@ -23,7 +23,7 @@ public class drewChessMan extends JFrame{
         for(i=4,k=81;i<6;i++,k+=342){
             play[i]=new JLabel(in);
             play[i].setBounds(k,56,55,55);
-            play[i].setName("黑马");
+            play[i].setName("马1");
         }
 
         //象
@@ -31,7 +31,7 @@ public class drewChessMan extends JFrame{
         for(i=8,k=138;i<10;i++,k+=228){
             play[i]=new JLabel(in);
             play[i].setBounds(k,56,55,55);
-            play[i].setName("象");
+            play[i].setName("象1");
         }
 
         //士
@@ -39,7 +39,7 @@ public class drewChessMan extends JFrame{
         for(i=12,k=195;i<14;i++,k+=114){
             play[i]=new JLabel(in);
             play[i].setBounds(k,56,55,55);
-            play[i].setName("士");
+            play[i].setName("士1");
         }
 
         //卒
@@ -47,7 +47,7 @@ public class drewChessMan extends JFrame{
         for(i=16,k=24;i<21;i++,k+=114){
             play[i]=new JLabel(in);
             play[i].setBounds(k,227,55,55);
-            play[i].setName("卒");
+            play[i].setName("卒1"+i);
         }
 
         //炮
@@ -55,14 +55,14 @@ public class drewChessMan extends JFrame{
         for(i=26,k=81;i<28;i++,k+=342){
             play[i]=new JLabel(in);
             play[i].setBounds(k,170,55,55);
-            play[i].setName("黑炮");
+            play[i].setName("炮1"+i);
         }
 
         //将
         in=new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\be8c1ad4c2904b51b91ec33c17922f1c.png");
         play[30]=new JLabel(in);
         play[30].setBounds(252,68,55,55);
-        play[30].setName("将");
+        play[30].setName("将1");
 
         //红色棋子
         //车
@@ -70,7 +70,7 @@ public class drewChessMan extends JFrame{
         for(i=2,k=24;i<4;i++,k+=456){
             play[i]=new JLabel(in);
             play[i].setBounds(k,569,55,55);
-            play[i].setName("红车");
+            play[i].setName("车2");
         }
 
         //马
@@ -78,7 +78,7 @@ public class drewChessMan extends JFrame{
         for(i=6,k=81;i<8;i++,k+=342){
             play[i]=new JLabel(in);
             play[i].setBounds(k,569,55,55);
-            play[i].setName("红马");
+            play[i].setName("马2");
         }
 
         //相
@@ -86,7 +86,7 @@ public class drewChessMan extends JFrame{
         for(i=10,k=138;i<12;i++,k+=228){
             play[i]=new JLabel(in);
             play[i].setBounds(k,569,55,55);
-            play[i].setName("相");
+            play[i].setName("相2");
         }
 
         //仕
@@ -94,7 +94,7 @@ public class drewChessMan extends JFrame{
         for(i=14,k=195;i<16;i++,k+=114){
             play[i]=new JLabel(in);
             play[i].setBounds(k,569,55,55);
-            play[i].setName("仕");
+            play[i].setName("仕2");
         }
 
         //兵
@@ -102,7 +102,7 @@ public class drewChessMan extends JFrame{
         for(i=21,k=24;i<26;i++,k+=114){
             play[i]=new JLabel(in);
             play[i].setBounds(k,398,55,55);
-            play[i].setName("兵");
+            play[i].setName("兵2"+i);
         }
 
         //炮
@@ -110,14 +110,14 @@ public class drewChessMan extends JFrame{
         for(i=28,k=81;i<30;i++,k+=342){
             play[i]=new JLabel(in);
             play[i].setBounds(k,455,55,55);
-            play[i].setName("红炮");
+            play[i].setName("炮2"+i);
         }
 
         //帅
         in=new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\97d92ef4acac4b678b6d9170f149b023.png");
         play[31]=new JLabel(in);
         play[31].setBounds(252,560,55,55);
-        play[31].setName("帅");
+        play[31].setName("帅2");
 
         for(int n=0;n<32;n++){
             con.add(play[n]);

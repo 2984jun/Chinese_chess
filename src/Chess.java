@@ -1,9 +1,7 @@
 import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
-import java.io.*;
 import java.lang.*;
 
 public class Chess {
@@ -170,7 +168,6 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
 
     public void mouseClicked(MouseEvent me){
         System.out.println("Mouse");
-
         //当前坐标
         int Ex=0,Ey=0;
         //启动线程
@@ -178,5 +175,18 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
             tmain=new Thread(this);
             tmain.start();
         }
+        Move_Chess_Piece move_chess_piece=new Move_Chess_Piece();
+        move_chess_piece.MoveChessPiece(con,me,play,image,Man,i,chessPlayClick,Ex,Ey,text,chessManClick);
     }
+
+    public void mousePressed(MouseEvent me){
+    }
+    public void mouseReleased(MouseEvent me){
+    }
+    public void mouseEntered(MouseEvent me){
+    }
+    public void mouseExited(MouseEvent me){
+    }
+
+
 }
