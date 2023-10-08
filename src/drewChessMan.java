@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 public class drewChessMan extends JFrame{
-    public void drewChessMan(JLabel play[]){
+    public void AdddrewChessMan(JLabel play[],Container con){
         //流程控制
         int i,k;
         //图标
@@ -61,7 +61,7 @@ public class drewChessMan extends JFrame{
         //将
         in=new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\be8c1ad4c2904b51b91ec33c17922f1c.png");
         play[30]=new JLabel(in);
-        play[30].setBounds(252,56,55,55);
+        play[30].setBounds(252,68,55,55);
         play[30].setName("将");
 
         //红色棋子
@@ -114,9 +114,13 @@ public class drewChessMan extends JFrame{
         }
 
         //帅
-        in=new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\b151f8198618367afb3ba3a42d738bd4b31ce51d.jpg");
+        in=new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\97d92ef4acac4b678b6d9170f149b023.png");
         play[31]=new JLabel(in);
         play[31].setBounds(252,560,55,55);
-        play[33].setName("帅");
+        play[31].setName("帅");
+
+        for(int n=0;n<32;n++){
+            con.add(play[n]);
+        }
     }
 }

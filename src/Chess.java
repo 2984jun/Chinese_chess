@@ -11,7 +11,7 @@ public class Chess {
         new ChessMainFrame("中国象棋；观棋不语真君子，棋死无悔大丈夫");
     }
 }
-class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runnable{
+class ChessMainFrame extends JFrame implements /*ActionListener,MouseListener,*/Runnable{
     //棋子
     JLabel play[]=new JLabel[32];
     //棋盘
@@ -31,7 +31,7 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
     //保存当前操作
     Vector Var;
     //规则类对象
-    ChessRule rule;
+    //ChessRule rule;
 
     /*单击棋子
         chessManClick=true 闪烁棋子 并给线程响应
@@ -70,7 +70,7 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
         con.setLayout(null);
 
         //实例化规则类
-        rule=new ChessRule();
+        //rule=new ChessRule();
         Var=new Vector();
 
         //创建工具栏
@@ -97,17 +97,18 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
 
         //添加棋子标签
         drewChessMan drewChessMan_=new drewChessMan();
+        drewChessMan_.AdddrewChessMan(play,con);
 
         //注册按钮监听
-        anew.addActionListener(this);
-        repent.addActionListener(this);
-        exit.addActionListener(this);
+        //anew.addActionListener(this);
+        //repent.addActionListener(this);
+        //exit.addActionListener(this);
 
         //注册棋子移动监听
-        for(int i=0;i<32;i++){
+        /*for(int i=0;i<32;i++){
             con.add(play[i]);
-            //play[i].addMouseListener(this);
-        }
+            play[i].addMouseListener(this);
+        }*/
 
         //添加棋盘标签
         con.add(image=new JLabel(new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\R-C.jpg")));
@@ -132,7 +133,7 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
             frameSize.width=screenSize.width;
         }
 
-        this.setLocation((screenSize.width- frameSize.width)/2-280,(screenSize.height-frameSize.height)/2-350);
+        this.setLocation((screenSize.width- frameSize.width)/2-270,(screenSize.height-frameSize.height)/2-350);
 
         //设置
         this.setIconImage(new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\b151f8198618367afb3ba3a42d738bd4b31ce51d.jpg").getImage());
