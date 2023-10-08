@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39a8b5f7-fcc2-4b3b-ab67-77c69273e5e0" name="Changes" comment="象棋main">
-      <change afterPath="$PROJECT_DIR$/src/drewChessMan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chess.java" afterDir="false" />
-    </list>
+    <list default="true" id="39a8b5f7-fcc2-4b3b-ab67-77c69273e5e0" name="Changes" comment="Update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +68,7 @@
       <workItem from="1696688372834" duration="2251000" />
       <workItem from="1696739161234" duration="7930000" />
       <workItem from="1696747855098" duration="38000" />
-      <workItem from="1696747909161" duration="331000" />
+      <workItem from="1696747909161" duration="637000" />
     </task>
     <task id="LOCAL-00001" summary="象棋main">
       <option name="closed" value="true" />
@@ -90,7 +86,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696688819334</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update">
+      <option name="closed" value="true" />
+      <created>1696748414564</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696748414564</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update">
+      <option name="closed" value="true" />
+      <created>1696748537370</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696748537370</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="象棋main" />
-    <option name="LAST_COMMIT_MESSAGE" value="象棋main" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>
