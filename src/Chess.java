@@ -149,15 +149,15 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                 try{
                     tmain.sleep(200);
                 }catch (Exception e){
-                    play[Man].setVisible(true);
                 }
+                play[Man].setVisible(true);
             }else{
                 text.setVisible(false);
                 try{
                     tmain.sleep(250);
                 }catch (Exception e){
-                    text.setVisible(true);
                 }
+                play[Man].setVisible(true);
             }
             try{
                 tmain.sleep(350);
@@ -185,9 +185,9 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
 
                 //移动兵
                 if(Man>15 && Man<26){
-                    rule.armsRule(Man,play[Man],me);
+                    rule.armsRule(Man,play[Man],me,Var);
                     //移动炮
-                } else if (Man>25 && Man<30) {
+                } /*else if (Man>25 && Man<30) {
                     rule.cannonRule(play[Man],play,me);
                     //移动车
                 } else if (Man>=0 && Man<4) {
@@ -205,7 +205,7 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                 //移动帅
                 else if (Man==30 || Man==31) {
                     rule.willRule(Man,play[Man],play,me);
-                }
+                }*/
 
                 //是否走棋错误(是否在原地没有动
                 if(Ex==play[Man].getX() && Ey==play[Man].getY()){
@@ -223,9 +223,9 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
 
                 //移动卒
                 if(Man>15 && Man<26){
-                    rule.armsRule(Man,play[Man],me);
+                    rule.armsRule(Man,play[Man],me,Var);
                     //移动炮
-                } else if (Man>25 && Man<30) {
+                } /*else if (Man>25 && Man<30) {
                     rule.cannonRule(play[Man],play,me);
                     //移动车
                 } else if (Man>=0 && Man<4) {
@@ -243,7 +243,7 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                 //移动将
                 else if (Man==30 || Man==31) {
                     rule.willRule(Man,play[Man],play,me);
-                }
+                }*/
 
                 //是否走棋错误(是否在原地没有动
                 if(Ex==play[Man].getX() && Ey==play[Man].getY()){
@@ -282,11 +282,11 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
 
                             //卒、兵吃棋规则
                             if(Man>15 && Man<26){
-                                rule.armsRule(play[Man],play[i]);
+                                rule.armsRule(Man,play[Man],play[i],i,Var);
                             }
 
                             //炮吃棋规则
-                            else if (Man>25 && Man<30) {
+                            /*else if (Man>25 && Man<30) {
                                 rule.cannonRule(0,play[Man],play[i],play,me);
                             }
 
@@ -315,7 +315,7 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                             else if (Man==30 || Man==31) {
                                 rule.willRule(Man,play[Man],play[i],play);
                                 play[Man].setVisible(true);
-                            }
+                            }*/
 
                             //是否走棋错误（是否在原地没有动）
                             if(Ex==play[Man].getX() && Ey==play[Man].getY()){
@@ -334,11 +334,11 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
 
                             //卒、兵吃棋规则
                             if(Man>15 && Man<26){
-                                rule.armsRule(play[Man],play[i]);
+                                rule.armsRule(Man,play[Man],play[i],i,Var);
                             }
 
                             //炮吃棋规则
-                            else if (Man>25 && Man<30) {
+                            /*else if (Man>25 && Man<30) {
                                 rule.cannonRule(0,play[Man],play[i],play,me);
                             }
 
@@ -367,7 +367,7 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                             else if (Man==30 || Man==31) {
                                 rule.willRule(Man,play[Man],play[i],play);
                                 play[Man].setVisible(true);
-                            }
+                            }*/
 
                             //是否走棋错误（是否在原地没有动）
                             if(Ex==play[Man].getX() && Ey==play[Man].getY()){
@@ -482,7 +482,7 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                 //赋给棋子
                 play[M].setVisible(true);
                 play[M].setBounds(x,y,55,55);
-                if(play[M].getName().charAt(i)=='1'){
+                if(play[M].getName().charAt(1)=='1'){
                     text.setText("黑棋走棋");
                     chessPlayClick=1;
                 }else{
