@@ -187,13 +187,13 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                 if(Man>15 && Man<26){
                     rule.armsRule(Man,play[Man],me,Var);
                     //移动炮
-                } /*else if (Man>25 && Man<30) {
-                    rule.cannonRule(play[Man],play,me);
+                } else if (Man>25 && Man<30) {
+                    rule.cannonRule(Man,play[Man],play,me,Var);
                     //移动车
                 } else if (Man>=0 && Man<4) {
-                    rule.cannonRule(play[Man],play,me);
+                    rule.cannonRule(Man,play[Man],play,me,Var);
                     //移动马
-                } else if (Man>3 && Man<8) {
+                } /*else if (Man>3 && Man<8) {
                     rule.horseRule(play[Man],play,me);
                     //移动相
                 } else if (Man>7 && Man<12) {
@@ -225,13 +225,13 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                 if(Man>15 && Man<26){
                     rule.armsRule(Man,play[Man],me,Var);
                     //移动炮
-                } /*else if (Man>25 && Man<30) {
-                    rule.cannonRule(play[Man],play,me);
+                } else if (Man>25 && Man<30) {
+                    rule.cannonRule(Man,play[Man],play,me,Var);
                     //移动车
                 } else if (Man>=0 && Man<4) {
-                    rule.cannonRule(play[Man],play,me);
+                    rule.cannonRule(Man,play[Man],play,me,Var);
                     //移动马
-                } else if (Man>3 && Man<8) {
+                } /*else if (Man>3 && Man<8) {
                     rule.horseRule(play[Man],play,me);
                     //移动象
                 } else if (Man>7 && Man<12) {
@@ -286,18 +286,18 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                             }
 
                             //炮吃棋规则
-                            /*else if (Man>25 && Man<30) {
-                                rule.cannonRule(0,play[Man],play[i],play,me);
+                            else if (Man>25 && Man<30) {
+                                rule.cannonRule(0,play[Man],Man,play[i],i,play,me,Var);
                             }
 
                             //车吃棋规则
                             else if (Man>=0 && Man<4) {
-                                rule.cannonRule(1,play[Man],play[i],play,me);
+                                rule.cannonRule(1,play[Man],Man,play[i],i,play,me,Var);
 
                             }
 
                             //马吃棋规则
-                            else if (Man>3 && Man<8) {
+                           /* else if (Man>3 && Man<8) {
                                 rule.horseRule(play[Man],play[i],play,me);
                             }
 
@@ -338,18 +338,18 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                             }
 
                             //炮吃棋规则
-                            /*else if (Man>25 && Man<30) {
-                                rule.cannonRule(0,play[Man],play[i],play,me);
+                            else if (Man>25 && Man<30) {
+                                rule.cannonRule(0,play[Man],Man,play[i],i,play,me,Var);
                             }
 
                             //车吃棋规则
                             else if (Man>=0 && Man<4) {
-                                rule.cannonRule(1,play[Man],play[i],play,me);
+                                rule.cannonRule(1,play[Man],Man,play[i],i,play,me,Var);
 
                             }
 
                             //马吃棋规则
-                            else if (Man>3 && Man<8) {
+                            /*else if (Man>3 && Man<8) {
                                 rule.horseRule(play[Man],play[i],play,me);
                             }
 
@@ -415,57 +415,71 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
             //车
             for (i = 0, k = 24; i < 2; i++, k += 456) {
                 play[i].setBounds(k, 56, 55, 55);
+                play[i].setVisible(true);
             }
             //马
             for (i = 4, k = 81; i < 6; i++, k += 342) {
                 play[i].setBounds(k, 56, 55, 55);
+                play[i].setVisible(true);
             }
             //象
             for (i = 8, k = 138; i < 10; i++, k += 228) {
                 play[i].setBounds(k, 56, 55, 55);
+                play[i].setVisible(true);
             }
             //士
             for (i = 12, k = 195; i < 14; i++, k += 114) {
                 play[i].setBounds(k, 56, 55, 55);
+                play[i].setVisible(true);
             }
             //卒
             for (i = 16, k = 24; i < 21; i++, k += 114) {
                 play[i].setBounds(k, 227, 55, 55);
+                play[i].setVisible(true);
             }
             //炮
             for (i = 26, k = 81; i < 28; i++, k += 342) {
                 play[i].setBounds(k, 170, 55, 55);
+                play[i].setVisible(true);
             }
             //将
             play[30].setBounds(252, 68, 55, 55);
+            play[30].setVisible(true);
 
             //红色棋子
             //车
             for (i = 2, k = 24; i < 4; i++, k += 456) {
                 play[i].setBounds(k, 569, 55, 55);
+                play[i].setVisible(true);
             }
             //马
             for (i = 6, k = 81; i < 8; i++, k += 342) {
                 play[i].setBounds(k, 569, 55, 55);
+                play[i].setVisible(true);
             }
             //相
             for (i = 10, k = 138; i < 12; i++, k += 228) {
                 play[i].setBounds(k, 569, 55, 55);
+                play[i].setVisible(true);
             }
             //士
             for (i = 14, k = 195; i < 16; i++, k += 114) {
                 play[i].setBounds(k, 569, 55, 55);
+                play[i].setVisible(true);
             }
             //兵
             for (i = 21, k = 24; i < 26; i++, k += 114) {
                 play[i].setBounds(k, 398, 55, 55);
+                play[i].setVisible(true);
             }
             //炮
             for (i = 28, k = 81; i < 30; i++, k += 342) {
                 play[i].setBounds(k, 455, 55, 55);
+                play[i].setVisible(true);
             }
             //帅
             play[31].setBounds(252, 560, 55, 55);
+            play[31].setVisible(true);
         }
         //悔棋按钮
         else if (ae.getSource().equals(repent)) {
