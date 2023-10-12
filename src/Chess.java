@@ -193,10 +193,14 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                 } else if (Man>=0 && Man<4) {
                     rule.cannonRule(Man,play[Man],play,me,Var);
                     //移动马
-                } /*else if (Man>3 && Man<8) {
-                    rule.horseRule(play[Man],play,me);
+                } else if (Man>3 && Man<8) {
+                    System.out.println(play[Man].getX());
+                    System.out.println(me.getX());
+                    System.out.println(play[Man].getY());
+                    System.out.println(me.getY());
+                    rule.horseRule(Man,play[Man],play,me,Var);
                     //移动相
-                } else if (Man>7 && Man<12) {
+                } /*else if (Man>7 && Man<12) {
                     rule.elephantRule(Man,play[Man],play,me);
                     //移动仕
                 } else if (Man>11 && Man<16) {
@@ -231,10 +235,10 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                 } else if (Man>=0 && Man<4) {
                     rule.cannonRule(Man,play[Man],play,me,Var);
                     //移动马
-                } /*else if (Man>3 && Man<8) {
-                    rule.horseRule(play[Man],play,me);
+                } else if (Man>3 && Man<8) {
+                    rule.horseRule(Man,play[Man],play,me,Var);
                     //移动象
-                } else if (Man>7 && Man<12) {
+                } /*else if (Man>7 && Man<12) {
                     rule.elephantRule(Man,play[Man],play,me);
                     //移动士
                 } else if (Man>11 && Man<16) {
@@ -297,12 +301,12 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                             }
 
                             //马吃棋规则
-                           /* else if (Man>3 && Man<8) {
-                                rule.horseRule(play[Man],play[i],play,me);
+                           else if (Man>3 && Man<8) {
+                                rule.horseRule(play[Man],Man,play[i],i,play,me,Var);
                             }
 
                             //相、象吃棋规则
-                            else if (Man>7 && Man<12) {
+                           /* else if (Man>7 && Man<12) {
                                 rule.elephantRule(play[Man],play[i],play);
                             }
 
@@ -349,12 +353,12 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                             }
 
                             //马吃棋规则
-                            /*else if (Man>3 && Man<8) {
-                                rule.horseRule(play[Man],play[i],play,me);
+                            else if (Man>3 && Man<8) {
+                                rule.horseRule(play[Man],Man,play[i],i,play,me,Var);
                             }
 
                             //相、象吃棋规则
-                            else if (Man>7 && Man<12) {
+                            /*else if (Man>7 && Man<12) {
                                 rule.elephantRule(play[Man],play[i],play);
                             }
 
