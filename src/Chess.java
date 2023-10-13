@@ -200,16 +200,16 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                     System.out.println(me.getY());
                     rule.horseRule(Man,play[Man],play,me,Var);
                     //移动相
-                } /*else if (Man>7 && Man<12) {
-                    rule.elephantRule(Man,play[Man],play,me);
+                } else if (Man>7 && Man<12) {
+                    rule.elephantRule(Man,play[Man],play,me,Var);
                     //移动仕
                 } else if (Man>11 && Man<16) {
-                    rule.chapRule(Man,play[Man],play,me);
+                    rule.chapRule(Man,play[Man],play,me,Var);
                 }
                 //移动帅
                 else if (Man==30 || Man==31) {
-                    rule.willRule(Man,play[Man],play,me);
-                }*/
+                    rule.willRule(Man,play[Man],play,me,Var);
+                }
 
                 //是否走棋错误(是否在原地没有动
                 if(Ex==play[Man].getX() && Ey==play[Man].getY()){
@@ -238,16 +238,16 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                 } else if (Man>3 && Man<8) {
                     rule.horseRule(Man,play[Man],play,me,Var);
                     //移动象
-                } /*else if (Man>7 && Man<12) {
-                    rule.elephantRule(Man,play[Man],play,me);
+                } else if (Man>7 && Man<12) {
+                    rule.elephantRule(Man,play[Man],play,me,Var);
                     //移动士
                 } else if (Man>11 && Man<16) {
-                    rule.chapRule(Man,play[Man],play,me);
+                    rule.chapRule(Man,play[Man],play,me,Var);
                 }
                 //移动将
                 else if (Man==30 || Man==31) {
-                    rule.willRule(Man,play[Man],play,me);
-                }*/
+                    rule.willRule(Man,play[Man],play,me,Var);
+                }
 
                 //是否走棋错误(是否在原地没有动
                 if(Ex==play[Man].getX() && Ey==play[Man].getY()){
@@ -306,20 +306,20 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                             }
 
                             //相、象吃棋规则
-                           /* else if (Man>7 && Man<12) {
-                                rule.elephantRule(play[Man],play[i],play);
+                            else if (Man>7 && Man<12) {
+                                rule.elephantRule(Man,play[Man],play[i],i,play,me,Var);
                             }
 
                             //士、仕吃棋规则
                             else if (Man>11 && Man<16) {
-                                rule.chapRule(Man,play[Man],play[i],play);
+                                rule.chapRule(Man,play[Man],play[i],i,play,me,Var);
                             }
 
                             //将、帅吃棋规则
                             else if (Man==30 || Man==31) {
-                                rule.willRule(Man,play[Man],play[i],play);
+                                rule.willRule(Man,play[Man],play[i],i,play,me,Var);
                                 play[Man].setVisible(true);
-                            }*/
+                            }
 
                             //是否走棋错误（是否在原地没有动）
                             if(Ex==play[Man].getX() && Ey==play[Man].getY()){
@@ -358,20 +358,20 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                             }
 
                             //相、象吃棋规则
-                            /*else if (Man>7 && Man<12) {
-                                rule.elephantRule(play[Man],play[i],play);
+                            else if (Man>7 && Man<12) {
+                                rule.elephantRule(Man,play[Man],play[i],i,play,me,Var);
                             }
 
                             //士、仕吃棋规则
                             else if (Man>11 && Man<16) {
-                                rule.chapRule(Man,play[Man],play[i],play);
+                                rule.chapRule(Man,play[Man],play[i],i,play,me,Var);
                             }
 
                             //将、帅吃棋规则
                             else if (Man==30 || Man==31) {
-                                rule.willRule(Man,play[Man],play[i],play);
+                                rule.willRule(Man,play[Man],play[i],i,play,me,Var);
                                 play[Man].setVisible(true);
-                            }*/
+                            }
 
                             //是否走棋错误（是否在原地没有动）
                             if(Ex==play[Man].getX() && Ey==play[Man].getY()){

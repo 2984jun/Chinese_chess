@@ -726,5 +726,284 @@ public class ChessRule {
             play.setBounds(playTake.getX(), playTake.getY(), 55, 55);
         }
     }
+
+    public void elephantRule(int Man,JLabel play,JLabel playQ[],MouseEvent me,Vector Var){
+        //坐标和障碍
+        int Ex=0,Ey=0;
+        boolean Obstacles=true; //true 无障碍 false 有障碍
+
+        //上左
+        if(play.getX()-me.getX()<=141 && play.getX()-me.getX()>=87 && play.getY()-me.getY()>=87 && play.getY()-me.getY()<=141){
+            //合法Y坐标
+            for(int i=56;i<=571;i+=57){
+                if(i-me.getY()>=-27 && i-me.getY()<=27){
+                    Ey=i;
+                    break;
+                }
+            }
+
+            //合法X坐标
+            for(int i=24;i<=480;i+=57){
+                if(i-me.getX()>=-27 && i-me.getX()<=27){
+                    Ex=i;
+                    break;
+                }
+            }
+
+            //左上方是否有棋子
+            for(int i=0;i<32;i++){
+                if(playQ[i].isVisible() && play.getX()-playQ[i].getX()==57 && play.getY()-playQ[i].getY()==57){
+                    Obstacles=false;
+                    break;
+                }
+            }
+
+            //相（红棋）不能过河
+            if(Obstacles && Ey>=341 && Man>9){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(Ex,Ey,55,55);
+            }
+            //象（黑棋）不能过河
+            else if (Obstacles && Ey<=284 && Man<10) {
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(Ex,Ey,55,55);
+            }
+        }
+        //上右
+        else if (me.getX()-play.getX()<=141 && me.getX()-play.getX()>=87 && play.getY()-me.getY()>=87 && play.getY()-me.getY()<=141) {
+            //合法Y坐标
+            for(int i=56;i<=571;i+=57){
+                if(i-me.getY()>=-27 && i-me.getY()<=27){
+                    Ey=i;
+                    break;
+                }
+            }
+
+            //合法X坐标
+            for(int i=24;i<=480;i+=57){
+                if(i-me.getX()>=-27 && i-me.getX()<=27){
+                    Ex=i;
+                    break;
+                }
+            }
+
+            //右上方是否有棋子
+            for(int i=0;i<32;i++){
+                if(playQ[i].isVisible() && playQ[i].getX()-play.getX()==57 && play.getY()-playQ[i].getY()==57){
+                    Obstacles=false;
+                    break;
+                }
+            }
+
+            //相（红棋）不能过河
+            if(Obstacles && Ey>=341 && Man>9){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(Ex,Ey,55,55);
+            }
+            //象（黑棋）不能过河
+            else if (Obstacles && Ey<=284 && Man<10) {
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(Ex,Ey,55,55);
+            }
+        }
+        //下左
+        else if (play.getX()-me.getX()<=141 && play.getX()-me.getX()>=87 && me.getY()-play.getY()>=87 && me.getY()-play.getY()<=141) {
+            //合法Y坐标
+            for(int i=56;i<=571;i+=57){
+                if(i-me.getY()>=-27 && i-me.getY()<=27){
+                    Ey=i;
+                    break;
+                }
+            }
+
+            //合法X坐标
+            for(int i=24;i<=480;i+=57){
+                if(i-me.getX()>=-27 && i-me.getX()<=27){
+                    Ex=i;
+                    break;
+                }
+            }
+
+            //左下方是否有棋子
+            for(int i=0;i<32;i++){
+                if(playQ[i].isVisible() && play.getX()-playQ[i].getX()==57 && playQ[i].getY()-play.getY()==57){
+                    Obstacles=false;
+                    break;
+                }
+            }
+
+            //相（红棋）不能过河
+            if(Obstacles && Ey>=341 && Man>9){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(Ex,Ey,55,55);
+            }
+            //象（黑棋）不能过河
+            else if (Obstacles && Ey<=284 && Man<10) {
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(Ex,Ey,55,55);
+            }
+        }
+        //下右
+        else if (me.getX()-play.getX()<=141 && me.getX()-play.getX()>=87 && me.getY()-play.getY()>=87 && me.getY()-play.getY()<=141) {
+            //合法Y坐标
+            for(int i=56;i<=571;i+=57){
+                if(i-me.getY()>=-27 && i-me.getY()<=27){
+                    Ey=i;
+                    break;
+                }
+            }
+
+            //合法X坐标
+            for(int i=24;i<=480;i+=57){
+                if(i-me.getX()>=-27 && i-me.getX()<=27){
+                    Ex=i;
+                    break;
+                }
+            }
+
+            //右下方是否有棋子
+            for(int i=0;i<32;i++){
+                if(playQ[i].isVisible() && playQ[i].getX()-play.getX()==57 && playQ[i].getY()-play.getY()==57){
+                    Obstacles=false;
+                    break;
+                }
+            }
+
+            //相（红棋）不能过河
+            if(Obstacles && Ey>=341 && Man>9){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(Ex,Ey,55,55);
+            }
+            //象（黑棋）不能过河
+            else if (Obstacles && Ey<=284 && Man<10) {
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(Ex,Ey,55,55);
+            }
+        }
+    }
+
+    public void elephantRule(int Man,JLabel play,JLabel playTake,int Take,JLabel playQ[],MouseEvent me,Vector Var){
+        //障碍
+        boolean Obstacles=true; //true 无障碍 flase 有障碍
+
+        //吃左上方的棋子
+        if(play.getX()-playTake.getX()>=87 && play.getX()-playTake.getX()<=141 && play.getY()-playTake.getY()>=87 && play.getY()-playTake.getY()<=141){
+            //左上方是否有棋子
+            for(int i=0;i<32;i++){
+                if(playQ[i].isVisible() && play.getX()-playQ[i].getX()==57 && play.getY()-playQ[i].getY()==57){
+                    Obstacles=false;
+                    break;
+                }
+            }
+        }
+        //吃右上方的棋子
+        else if (playTake.getX()-play.getX()>=87 && playTake.getX()-play.getX()<=141 && play.getY()-playTake.getY()>=87 && play.getY()-playTake.getY()<=141) {
+            //右上方是否有棋子
+            for(int i=0;i<32;i++){
+                if(playQ[i].isVisible() && playQ[i].getX()-play.getX()==57 && play.getY()-playQ[i].getY()==57){
+                    Obstacles=false;
+                    break;
+                }
+            }
+        }
+        //吃左下方的棋子
+        else if (play.getX()-playTake.getX()>=87 && play.getX()-playTake.getX()<=141 && playTake.getY()-play.getY()>=87 && playTake.getY()-play.getY()<=141) {
+            //左下方是否有棋子
+            for(int i=0;i<32;i++){
+                if(playQ[i].isVisible() && playQ[i].getY()-play.getY()==57 && play.getX()-playQ[i].getX()==57){
+                    Obstacles=false;
+                    break;
+                }
+            }
+        }
+        //吃右下方的棋子
+        else if (playTake.getX()-play.getX()>=87 && playTake.getX()-play.getX()<=141 && playTake.getY()-play.getY()>=87 && playTake.getY()-play.getY()<=141) {
+            //右下方是否有棋子
+            for(int i=0;i<32;i++){
+                if(playQ[i].isVisible() && playQ[i].getX()-play.getX()==57 && playQ[i].getY()-play.getY()==57){
+                    Obstacles=false;
+                    break;
+                }
+            }
+        }
+
+        //没有障碍、并且不能吃自己的棋子
+        if(Obstacles && playTake.getName().charAt(1)!=play.getName().charAt(1)){
+            //当前记录添加到集合（用于悔棋）
+            Var.add(String.valueOf(play.isVisible()));
+            Var.add(String.valueOf(play.getX()));
+            Var.add(String.valueOf(play.getY()));
+            Var.add(String.valueOf(Man));
+
+            //当前记录添加到集合（用于悔棋）
+            Var.add(String.valueOf(playTake.isVisible()));
+            Var.add(String.valueOf(playTake.getX()));
+            Var.add(String.valueOf(playTake.getY()));
+            Var.add(String.valueOf(Take));
+
+            playTake.setVisible(false);
+            play.setBounds(playTake.getX(), playTake.getY(), 55, 55);
+        }
+    }
+
+    //士、仕移动规则
+    public void chapRule(int Man,JLabel play,JLabel playQ[],MouseEvent me,Vector Var){
+
+    }
+
+    //士、仕吃棋规则
+    public void chapRule(int Man,JLabel play,JLabel playTake,int Take,JLabel playQ[],MouseEvent me,Vector Var){
+
+    }
+
+    //帅、将移动规则
+    public void willRule(int Man,JLabel play,JLabel playQ[],MouseEvent me,Vector Var){
+
+    }
+
+    //帅、将吃棋规则
+    public void willRule(int Man,JLabel play,JLabel playTake,int Take,JLabel playQ[],MouseEvent me,Vector Var){
+
+    }
 }
 
