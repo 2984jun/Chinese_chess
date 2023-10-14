@@ -74,6 +74,7 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
         //创建工具栏
         jmain=new JToolBar();
         text=new JLabel("欢迎使用象棋对弈系统");
+        text.setVisible(true);
 
         //当鼠标放上显示信息
         text.setToolTipText("信息提示");
@@ -110,7 +111,7 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
 
         //添加棋盘标签
         con.add(image=new JLabel(new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\R-C.jpg")));
-        image.setBounds(0,30,558,620);
+        image.setBounds(0,30,558,630);
         image.addMouseListener(this);
 
         //注册窗体关闭监听
@@ -138,7 +139,7 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
         this.setIconImage(new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\b151f8198618367afb3ba3a42d738bd4b31ce51d.jpg").getImage());
         this.setResizable(false);
         this.setTitle(Title);
-        this.setSize(558,670);
+        this.setSize(558,680);
         this.show();
     }
 
@@ -194,10 +195,6 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                     rule.cannonRule(Man,play[Man],play,me,Var);
                     //移动马
                 } else if (Man>3 && Man<8) {
-                    System.out.println(play[Man].getX());
-                    System.out.println(me.getX());
-                    System.out.println(play[Man].getY());
-                    System.out.println(me.getY());
                     rule.horseRule(Man,play[Man],play,me,Var);
                     //移动相
                 } else if (Man>7 && Man<12) {
@@ -211,7 +208,7 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                     rule.willRule(Man,play[Man],play,me,Var);
                 }
 
-                //是否走棋错误(是否在原地没有动
+                //是否走棋错误(是否在原地没有动）
                 if(Ex==play[Man].getX() && Ey==play[Man].getY()){
                     text.setText("红棋走棋");
                     chessPlayClick=2;
@@ -249,7 +246,7 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                     rule.willRule(Man,play[Man],play,me,Var);
                 }
 
-                //是否走棋错误(是否在原地没有动
+                //是否走棋错误(是否在原地没有动)
                 if(Ex==play[Man].getX() && Ey==play[Man].getY()){
                     text.setText("黑棋走棋");
                     chessPlayClick=1;
@@ -412,28 +409,29 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
     public void actionPerformed(ActionEvent ae){
         //重新开始按钮
         if(ae.getSource().equals(anew)) {
+            chessPlayClick=2;
             int i, k;
             //重新排列每个棋子的位置
             //黑色棋子
 
             //车
             for (i = 0, k = 24; i < 2; i++, k += 456) {
-                play[i].setBounds(k, 56, 55, 55);
+                play[i].setBounds(k, 68, 55, 55);
                 play[i].setVisible(true);
             }
             //马
             for (i = 4, k = 81; i < 6; i++, k += 342) {
-                play[i].setBounds(k, 56, 55, 55);
+                play[i].setBounds(k, 68, 55, 55);
                 play[i].setVisible(true);
             }
             //象
             for (i = 8, k = 138; i < 10; i++, k += 228) {
-                play[i].setBounds(k, 56, 55, 55);
+                play[i].setBounds(k, 68, 55, 55);
                 play[i].setVisible(true);
             }
             //士
             for (i = 12, k = 195; i < 14; i++, k += 114) {
-                play[i].setBounds(k, 56, 55, 55);
+                play[i].setBounds(k, 68, 55, 55);
                 play[i].setVisible(true);
             }
             //卒
@@ -442,8 +440,8 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                 play[i].setVisible(true);
             }
             //炮
-            for (i = 26, k = 81; i < 28; i++, k += 342) {
-                play[i].setBounds(k, 170, 55, 55);
+            for (i = 26, k = 78; i < 28; i++, k += 342) {
+                play[i].setBounds(k, 180, 55, 55);
                 play[i].setVisible(true);
             }
             //将
@@ -482,7 +480,7 @@ class ChessMainFrame extends JFrame implements ActionListener,MouseListener,Runn
                 play[i].setVisible(true);
             }
             //帅
-            play[31].setBounds(252, 560, 55, 55);
+            play[31].setBounds(252, 566, 55, 55);
             play[31].setVisible(true);
         }
         //悔棋按钮

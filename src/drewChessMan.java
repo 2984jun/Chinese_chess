@@ -14,7 +14,7 @@ public class drewChessMan extends JFrame{
         in=new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\a7af275077614853a7b552db580e8ee4.png");
         for(i=0,k=24;i<2;i++,k+=456){
             play[i]=new JLabel(in);
-            play[i].setBounds(k,56,55,55);
+            play[i].setBounds(k,68,55,55);
             play[i].setName("车1");
         }
 
@@ -22,7 +22,7 @@ public class drewChessMan extends JFrame{
         in=new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\10218cb37ccc42e58c0ea1bbdec503fd.png");
         for(i=4,k=81;i<6;i++,k+=342){
             play[i]=new JLabel(in);
-            play[i].setBounds(k,56,55,55);
+            play[i].setBounds(k,68,55,55);
             play[i].setName("马1");
         }
 
@@ -30,7 +30,7 @@ public class drewChessMan extends JFrame{
         in=new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\0fbe8b946eca4351b6929d0c46517e8f.png");
         for(i=8,k=138;i<10;i++,k+=228){
             play[i]=new JLabel(in);
-            play[i].setBounds(k,56,55,55);
+            play[i].setBounds(k,68,55,55);
             play[i].setName("象1");
         }
 
@@ -38,7 +38,7 @@ public class drewChessMan extends JFrame{
         in=new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\0b43a15126a7454ea92f852a135c9e41 (1).png");
         for(i=12,k=195;i<14;i++,k+=114){
             play[i]=new JLabel(in);
-            play[i].setBounds(k,56,55,55);
+            play[i].setBounds(k,68,55,55);
             play[i].setName("士1");
         }
 
@@ -52,9 +52,9 @@ public class drewChessMan extends JFrame{
 
         //炮
         in=new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\bd8f4b1a88934f8086acc9ba2e56d2a7.png");
-        for(i=26,k=81;i<28;i++,k+=342){
+        for(i=26,k=78;i<28;i++,k+=342){
             play[i]=new JLabel(in);
-            play[i].setBounds(k,170,55,55);
+            play[i].setBounds(k,180,55,55);
             play[i].setName("炮1"+i);
         }
 
@@ -116,7 +116,7 @@ public class drewChessMan extends JFrame{
         //帅
         in=new ImageIcon("C:\\Users\\fuwujun\\Pictures\\Camera Roll\\97d92ef4acac4b678b6d9170f149b023.png");
         play[31]=new JLabel(in);
-        play[31].setBounds(252,560,55,55);
+        play[31].setBounds(252,565,55,55);
         play[31].setName("帅2");
 
         for(int n=0;n<32;n++){

@@ -274,6 +274,8 @@ public class ChessRule {
 
             playTake.setVisible(false);
             play.setBounds(playTake.getX(), playTake.getY(), 55, 55);
+            System.out.println(play.getX());
+            System.out.println(play.getY());
         }
         //起点和终点之间没有棋子是车的规则，并且不能吃自己的棋子
         else if (Count == 0 && Chess == 1 && playTake.getName().charAt(1) != play.getName().charAt(1)) {
@@ -988,22 +990,332 @@ public class ChessRule {
 
     //士、仕移动规则
     public void chapRule(int Man,JLabel play,JLabel playQ[],MouseEvent me,Vector Var){
+        //上、右
+        if(me.getX()-play.getX()>=29 && me.getX()-play.getX()<=114 && play.getY()-me.getY()>=25 && play.getY()-me.getY()<=90){
+            //士不能超过自己的界限
+            if(Man<14 && (play.getX()+57) >=195 && (play.getX()+57)<=309 && (play.getY()-57)<=170 && (play.getY()-57)>=50){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
 
+                play.setBounds(play.getX()+57,play.getY()-57,55,55);
+            }
+            //仕不能超过自己的界限
+            else if (Man >13 && (play.getY()-57)>=455 && (play.getY()-57)<=560 && (play.getX()+57)>=195 && (play.getX()+57)<=309){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(play.getX()+57,play.getY()-57,55,55);
+            }
+        }
+        //上左
+        else if (play.getX()-me.getX()>=25 && play.getX()-me.getX()<=114 && play.getY()-me.getY()>=2 && play.getY()-me.getY()<=90) {
+            //士不能超过自己的界限
+            if(Man<14 && (play.getX()-57) >=195 && (play.getX()-57)<=309 && (play.getY()-57)<=170 && (play.getY()-57)>=50){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(play.getX()-57,play.getY()-57,55,55);
+            }
+            //仕不能超过自己的界限
+            else if (Man >13 && (play.getY()-57)>=455 && (play.getY()-57)<=560 && (play.getX()-57)>=195 && (play.getX()-57)<=309){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(play.getX()-57,play.getY()-57,55,55);
+            }
+        }
+        //下左
+        else if (play.getX()-me.getX()>=20 && play.getX()-me.getX()<=114 && me.getY()-play.getY()>=2 && me.getY()-play.getY()<=90) {
+            //士不能超过自己的界限
+            if(Man<14 && (play.getX()-57) >=195 && (play.getX()-57)<=309 && (play.getY()+57)<=170 && (play.getY()+57)>=50){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(play.getX()-57,play.getY()+57,55,55);
+            }
+            //仕不能超过自己的界限
+            else if (Man >13 && (play.getY()+57)>=455 && (play.getY()+57)<=560 && (play.getX()-57)>=195 && (play.getX()-57)<=309){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(play.getX()-57,play.getY()+57,55,55);
+            }
+        }
+        //下右
+        else if (me.getX()-play.getX()>=29 && me.getX()-play.getX()<=114 && me.getY()-play.getY()>=25 && me.getY()-play.getY()<=90) {
+            //士不能超过自己的界限
+            if(Man<14 && (play.getX()+57) >=195 && (play.getX()+57)<=309 && (play.getY()+57)<=170 && (play.getY()+57)>=50){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(play.getX()+57,play.getY()+57,55,55);
+            }
+            //仕不能超过自己的界限
+            else if (Man >13 && (play.getY()+57)>=455 && (play.getY()+57)<=560 && (play.getX()+57)>=195 && (play.getX()+57)<=309){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(play.getX()+57,play.getY()+57,55,55);
+            }
+        }
     }
 
     //士、仕吃棋规则
     public void chapRule(int Man,JLabel play,JLabel playTake,int Take,JLabel playQ[],MouseEvent me,Vector Var){
+        //当前状态
+        boolean Chap=false;
 
+        //上、右
+        if(playTake.getX()-play.getX()>=20 && playTake.getX()-play.getX()<=114 && play.getY()-playTake.getY()>=2 && play.getY()-playTake.getY()<=87){
+            //被吃的棋子是否和当前士相近
+            if(Man <14 && playTake.getX()>=195 && playTake.getX()<=309 && playTake.getY()<=170 && playTake.getY()>=50 && playTake.isVisible()){
+                Chap=true;
+            }
+            //被吃的棋子是否和当前仕相近
+            else if (Man >13 && playTake.getX()>=195 && playTake.getX()<=309 && playTake.getY()>=455 && playTake.getY()<=569 && playTake.isVisible()) {
+                Chap=true;
+            }
+        }
+        //上、左
+        else if (play.getX()-playTake.getX()>=20 && play.getX()-playTake.getX()<=114 && play.getY()-playTake.getY()>=2 && play.getY()-playTake.getY()<=87) {
+            //被吃的棋子是否和当前士相近
+            if(Man <14 && playTake.getX()>=195 && playTake.getX()<=309 && playTake.getY()<=170 && playTake.getY()>=50 && playTake.isVisible()){
+                Chap=true;
+            }
+            //被吃的棋子是否和当前仕相近
+            else if (Man >13 && playTake.getX()>=195 && playTake.getX()<=309 && playTake.getY()>=455 && playTake.getY()>=569 && playTake.isVisible()) {
+                Chap=true;
+            }
+        }
+        //下、左
+        else if (play.getX()-playTake.getX()>=20 && play.getX()-playTake.getX()<=114 && playTake.getY()-play.getY()>=2 && playTake.getY()-play.getY()<=87) {
+            //被吃的棋子是否和当前士相近
+            if(Man <14 && playTake.getX()>=195 && playTake.getX()<=309 && playTake.getY()<=170 && playTake.getY()>=50 && playTake.isVisible()){
+                Chap=true;
+            }
+            //被吃的棋子是否和当前仕相近
+            else if (Man >13 && playTake.getX()>=195 && playTake.getX()<=309 && playTake.getY()>=455 && playTake.getY()<=569 && playTake.isVisible()) {
+                Chap=true;
+            }
+        }
+        //下、右
+        else if (playTake.getX()-play.getX()>=20 && playTake.getX()-play.getX()<=114 && playTake.getY()-play.getY()>=2 && playTake.getY()-play.getY()<=87) {
+            //被吃的棋子是否和当前士相近
+            if(Man <14 && playTake.getX()>=195 && playTake.getX()<=309 && playTake.getY()<=170 && playTake.getY()>=50 && playTake.isVisible()){
+                Chap=true;
+            }
+            //被吃的棋子是否和当前仕相近
+            else if (Man >13 && playTake.getX()>=195 && playTake.getX()<=309 && playTake.getY()>=455 && playTake.getY()<=569 && playTake.isVisible()) {
+                Chap=true;
+            }
+        }
+
+        //可移动、并且不能吃自己的棋子
+        if(Chap && playTake.getName().charAt(1)!= play.getName().charAt(1)){
+            //当前记录添加到集合（用于悔棋）
+            Var.add(String.valueOf(play.isVisible()));
+            Var.add(String.valueOf(play.getX()));
+            Var.add(String.valueOf(play.getY()));
+            Var.add(String.valueOf(Man));
+
+            //当前记录添加到集合（用于悔棋）
+            Var.add(String.valueOf(play.isVisible()));
+            Var.add(String.valueOf(play.getX()));
+            Var.add(String.valueOf(play.getY()));
+            Var.add(String.valueOf(Take));
+
+            playTake.setVisible(false);
+            play.setBounds(playTake.getX(),playTake.getY(),55,55);
+        }
     }
 
     //帅、将移动规则
     public void willRule(int Man,JLabel play,JLabel playQ[],MouseEvent me,Vector Var){
+                //向上
+        if(me.getX()-play.getX()>=0 && me.getX()-play.getX()<=55 && play.getY()-me.getY()>=2 && play.getY()-me.getY()<=87){
+            //将是否超过自己的界限
+            if(Man==30 && me.getX()>=195 && me.getX()<=359 && me.getY() <=190 && me.getY()>=50){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
 
+                play.setBounds(play.getX(),play.getY()-57,55,55);
+            }
+            //帅是否超过自己的界限
+            else if (Man==31 && me.getX()>=195 && me.getX()<=359 && me.getY() >=445) {
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(play.getX(),play.getY()-57,55,55);
+            }
+        }
+        //向左
+        else if (play.getX()-me.getX()>=2 && play.getX()-me.getX()<=57 && play.getY()-me.getY()>=-27 && play.getY()-me.getY()<=27) {
+            //将是否超过自己的界限
+            if(Man==30 && me.getX()>=195 && me.getX()<=359 && me.getY() <=190 && me.getY()>=50){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(play.getX()-57,play.getY(),55,55);
+            }
+            //帅是否超过自己的界限
+            else if (Man==31 && me.getX()>=195 && me.getX()<=359 && me.getY() >=445) {
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(play.getX()-57,play.getY(),55,55);
+            }
+        }
+        //向右
+        else if (me.getX()-play.getX()>=57 && me.getX()-play.getX()<=112 && play.getY()-me.getY()>=-27 && play.getY()-me.getY()<=27) {
+            //将是否超过自己的界限
+            if(Man==30 && me.getX()>=195 && me.getX()<=359 && me.getY() <=190 && me.getY()>=50){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(play.getX()+57,play.getY(),55,55);
+            }
+            //帅是否超过自己的界限
+            else if (Man==31 && me.getX()>=195 && me.getX()<=359 && me.getY() >=445) {
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(play.getX()+57,play.getY(),55,55);
+            }
+        }
+        //向下
+        else if (me.getX()-play.getX()>=0 && me.getX()-play.getX()<=55 && me.getY()-play.getY()>=2 && me.getY()-play.getY()<=87) {
+            //将是否超过自己的界限
+            if(Man==30 && me.getX()>=195 && me.getX()<=359 && me.getY() <=190 && me.getY()>=50){
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(play.getX(),play.getY()+57,55,55);
+            }
+            //帅是否超过自己的界限
+            else if (Man==31 && me.getX()>=195 && me.getX()<=359 && me.getY() >=445) {
+                //当前记录添加到集合（用于悔棋）
+                Var.add(String.valueOf(play.isVisible()));
+                Var.add(String.valueOf(play.getX()));
+                Var.add(String.valueOf(play.getY()));
+                Var.add(String.valueOf(Man));
+
+                play.setBounds(play.getX(), play.getY()+57, 55, 55);
+            }
+        }
     }
 
     //帅、将吃棋规则
     public void willRule(int Man,JLabel play,JLabel playTake,int Take,JLabel playQ[],MouseEvent me,Vector Var){
+        //当前状态
+        boolean will=false;
 
+        //向上吃
+        if(play.getX()-playTake.getX()>=0 && play.getX()-playTake.getX()<=55 && play.getY()-playTake.getY()>=27 && play.getY()-playTake.getY()<=87 && playTake.isVisible()){
+            //被吃的棋子是否和当前的将相近
+            if(Man==30 && playTake.getX()>=195 && playTake.getX()<=309 && playTake.getY()<=170){
+                will=true;
+            }
+            //被吃的棋子是否和当前帅相近
+            else if (Man==31 && playTake.getY()>=455 && playTake.getX()>=195 && playTake.getX()<=309) {
+                will=true;
+            }
+        }
+        //向左吃
+        else if (play.getX()-playTake.getX()>=0 && play.getX()-playTake.getX()<=57 && play.getY()-playTake.getY()>=-27 && play.getY()-playTake.getY()<=27 && playTake.isVisible()) {
+            //被吃的棋子是否和当前的将相近
+            if(Man==30 && playTake.getX()>=195 && playTake.getX()<=309 && playTake.getY()<=170){
+                will=true;
+            }
+            //被吃的棋子是否和当前帅相近
+            else if (Man==31 && playTake.getY()>=455 && playTake.getX()>=195 && playTake.getX()<=309) {
+                will=true;
+            }
+        }
+        //向右吃
+        else if (playTake.getX()-play.getX()>=2 && playTake.getX()-play.getX()<=57 && playTake.getY()-play.getY()>=-27 && playTake.getY()-play.getY()<=27 && playTake.isVisible()) {
+            //被吃的棋子是否和当前的将相近
+            if(Man==30 && playTake.getX()>=195 && playTake.getX()<=309 && playTake.getY()<=170){
+                will=true;
+            }
+            //被吃的棋子是否和当前帅相近
+            else if (Man==31 && playTake.getY()>=455 && playTake.getX()>=195 && playTake.getX()<=309) {
+                will=true;
+            }
+        }
+        //向下吃
+        else if (playTake.getX()-play.getX()>=0 && playTake.getX()-play.getX()<=87 && playTake.getY()-play.getY()>=27 && playTake.getY()-play.getY()<=87 && playTake.isVisible()) {
+            //被吃的棋子是否和当前的将相近
+            if(Man==30 && playTake.getX()>=195 && playTake.getX()<=309 && playTake.getY()<=170){
+                will=true;
+            }
+            //被吃的棋子是否和当前帅相近
+            else if (Man==31 && playTake.getY()>=455 && playTake.getX()>=195 && playTake.getX()<=309) {
+                will=true;
+            }
+        }
+
+        //可以吃棋、并且不能吃自己的棋子
+        if(will && playTake.getName().charAt(1)!=play.getName().charAt(1)){
+            //当前记录添加到集合（用于悔棋）
+            Var.add(String.valueOf(play.isVisible()));
+            Var.add(String.valueOf(play.getX()));
+            Var.add(String.valueOf(play.getY()));
+            Var.add(String.valueOf(Man));
+
+            //当前记录添加到集合（用于悔棋）
+            Var.add(String.valueOf(play.isVisible()));
+            Var.add(String.valueOf(play.getX()));
+            Var.add(String.valueOf(play.getY()));
+            Var.add(String.valueOf(Take));
+
+            playTake.setVisible(false);
+            play.setBounds(playTake.getX(),playTake.getY(),55,55);
+        }
     }
 }
 
